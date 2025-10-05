@@ -16,7 +16,7 @@ def unique_number():
     numbers = [str(num) for num in range(10)]
     first = random.choice(numbers[1:])
     others = random.sample([num for num in numbers if num != first], 3)
-    return first + " ".join(others)
+    return first + "".join(others)
 
 def valid_tip(tip: str) -> tuple[bool, str]:
     """Check if the players tip is valid and returns the message"""
@@ -44,8 +44,8 @@ def count_bulls_cows(tip: str, secret: str) -> tuple[int, int]:
 def result(bulls: int, cows: int) -> None:
     """Prints the result of the guess with singular or plural form."""
 
-    bull_text = "bull" if bull == 1 else "bulls"
-    cow_text = "cow" if cow == 1 else "cows"
+    bull_text = "bulls" if bulls == 1 else "bulls"
+    cow_text = "cows" if cows == 1 else "cows"
     print(f"{bulls} {bull_text}, {cows} {cow_text}\n")
 
 def game() -> None:
@@ -79,7 +79,7 @@ def game() -> None:
             minutes, seconds = divmod(elapsed, 60)
 
             print(f"Correct, you've guessed the right number!")
-            quess_word = "guess" if attempts == 1 else "guesses"
+            guess_word = "guess" if attempts == 1 else "guesses"
             print(f"in {attempts} {guess_word}!")
             print(f"Time taken: {minutes} min {seconds} sec")
             print("--------------------------------------------------------")
